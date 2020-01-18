@@ -523,6 +523,11 @@ Start the L2TP connection:
 echo "c myvpn" > /var/run/xl2tpd/l2tp-control
 ```
 
+Note: alternatively if it doesn't start, try (this worked on Raspberry Pi):
+```bash
+echo "c myvpn" | sudo tee /var/run/xl2tpd/l2tp-control
+```
+
 Run `ifconfig` and check the output. You should now see a new interface `ppp0`.
 
 Check your existing default route:
